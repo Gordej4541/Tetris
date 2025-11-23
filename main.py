@@ -19,6 +19,7 @@ def find(raw: str):
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
+        MainWindow.setWindowIcon(QtGui.QIcon('icon.png'))
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(420, 671)
         MainWindow.setMinimumSize(QtCore.QSize(420, 671))
@@ -26,6 +27,8 @@ class Ui_MainWindow(object):
 
         self.centralwidget = QtWidgets.QWidget(parent=MainWindow)
         self.centralwidget.setObjectName("centralwidget")
+
+
 
         self.label = QtWidgets.QLabel(parent=self.centralwidget)
         self.label.setGeometry(QtCore.QRect(0, 10, 421, 81))
