@@ -4,30 +4,40 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b1a84956-41de-460f-9bf9-d78172a0ee5d" name="Changes" comment="add second lesson code" />
+    <list default="true" id="b1a84956-41de-460f-9bf9-d78172a0ee5d" name="Changes" comment="add second lesson homework code">
+      <change afterPath="$PROJECT_DIR$/tetris.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "Gordej4541"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Gordej4541&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/Gordej4541/Tetris.git",
-    "accountId": "3b4b2a4b-7ee5-4ef3-bc1d-ce31ee61f19d"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Gordej4541/Tetris.git&quot;,
+    &quot;accountId&quot;: &quot;3b4b2a4b-7ee5-4ef3-bc1d-ce31ee61f19d&quot;
   }
-}]]></component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 0
-}]]></component>
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
   <component name="ProjectId" id="35Yw6E6joTfuzxvwscfBHyBKxY3" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -38,6 +48,7 @@
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "Python.main.executor": "Run",
     "Python.server.executor": "Run",
+    "Python.tetris.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "main",
@@ -89,7 +100,15 @@
       <option name="project" value="LOCAL" />
       <updated>1763303546640</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="add second lesson homework code">
+      <option name="closed" value="true" />
+      <created>1763904080525</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1763904080525</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -106,6 +125,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="add first lesson code" />
     <MESSAGE value="add second lesson code" />
-    <option name="LAST_COMMIT_MESSAGE" value="add second lesson code" />
+    <MESSAGE value="add second lesson homework code" />
+    <option name="LAST_COMMIT_MESSAGE" value="add second lesson homework code" />
   </component>
 </project>
