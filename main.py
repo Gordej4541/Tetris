@@ -21,7 +21,6 @@ def find(raw: str):
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
-        MainWindow.setWindowIcon(QtGui.QIcon('icon.png'))
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(420, 671)
         MainWindow.setMinimumSize(QtCore.QSize(420, 671))
@@ -29,8 +28,6 @@ class Ui_MainWindow(object):
 
         self.centralwidget = QtWidgets.QWidget(parent=MainWindow)
         self.centralwidget.setObjectName("centralwidget")
-
-
 
         self.label = QtWidgets.QLabel(parent=self.centralwidget)
         self.label.setGeometry(QtCore.QRect(0, 10, 421, 81))
@@ -106,7 +103,6 @@ class Ui_MainWindow(object):
         self.enter_button.setText(_translate("MainWindow", "Вход"))
 
 
-
 class Window(QtWidgets.QMainWindow, Ui_MainWindow):
     def __init__(self):
         super().__init__()
@@ -144,7 +140,6 @@ class Window(QtWidgets.QMainWindow, Ui_MainWindow):
         else:
             result[1] = True
         return tuple(result)
-
 
     # def connect(self):
     #     sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -192,10 +187,11 @@ class Window(QtWidgets.QMainWindow, Ui_MainWindow):
     #             time.sleep(0.5)
     #             if tick == 3:
     #                 return
+
     def connect(self):
         self.tetris = tetris.Tetris(self)
+        self.tetris.setStyleSheet("background-color: white")
         self.tetris.show()
-
 
 
 stylesheet = """ 
@@ -205,9 +201,9 @@ QMainWindow {
         background-position: center; 
 } """
 
-
 if __name__ == "__main__":
     import sys
+
     app = QtWidgets.QApplication(sys.argv)
     app.setStyleSheet(stylesheet)
     w = Window()
