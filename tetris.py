@@ -6,15 +6,15 @@ from PyQt5.QtGui import QPainter, QColor
 
 
 class Tetris(QMainWindow):
-    def __init__(self, main):
+    def __init__(self):
         super().__init__()
         self.tboard = None
-        self.main = main
+        self.main = "Tetris"
         self.initUI()
 
     def initUI(self):
         self.setFixedSize(360, 760)
-        self.setWindowTitle(self.main.name_row.text())
+        self.setWindowTitle("Tetris")
         self.show()
         self.tboard = Board(self, self.main)
         self.setCentralWidget(self.tboard)
@@ -44,7 +44,7 @@ class Board(QFrame):
         self.numLinesRemoved = 0
         self.board = []
 
-        self.setFocusPolicy(Qt.StrongFocus)
+        self.setFocusPolicy(int(Qt.StrongFocus))
         self.isStarted = False
         self.isPaused = False
         self.clearBoard()
@@ -360,5 +360,5 @@ class Shape(object):
 
 if __name__ == '__main__':
     app = QApplication([])
-    tetris = Tetris("Tetris")
+    tetris = Tetris()
     sys.exit(app.exec_())
