@@ -8,7 +8,7 @@ from sqlalchemy.orm import sessionmaker
 
 main_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)  # Настраиваем сокет
 main_socket.setsockopt(socket.IPPROTO_TCP, socket.TCP_NODELAY, 1)  # Отключаем пакетирование
-main_socket.bind(("192.168.31.29", 10000))  # IP и порт привязываем к порту
+main_socket.bind(("192.168.0.225", 10000))  # IP и порт привязываем к порту
 main_socket.setblocking(False)  # Непрерывность, не ждём ответа
 main_socket.listen(5)  # Прослушка входящих соединений, 5 одновременных подключений
 print("Сокет создался")
@@ -61,14 +61,20 @@ while run:
         try:
             data = sock.recv(1024).decode()
             data = find(data)
+            if data[0] == "final":
+                data.remove("final")
+                player = s.get(Player, data[0])
+                if player.score < int(data[2]):
+                    player.score = int(data[2])
+                    s.merge(player)
+                    s.commit()
             if data:
                 player = Player(data[0], data[1])
                 s.add(player)
                 s.commit()
                 sock.send("<0>".encode())
-            print("Получил", data)
-            run = False
-            break
+                sock.close()
+                players.remove(sock)
         except sqlalchemy.exc.IntegrityError:
             s.rollback()
             player = s.get(Player, data[0])
@@ -76,7 +82,8 @@ while run:
                 sock.send(f"<{player.score}>".encode())
             else:
                 sock.send("<-1>".encode())
-            break
+            sock.close()
+            players.remove(sock)
         except BlockingIOError:
             pass
 
