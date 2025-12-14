@@ -1,4 +1,5 @@
 import time
+import datetime
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 import socket
@@ -193,7 +194,11 @@ class Window(QtWidgets.QMainWindow, Ui_MainWindow):
 
     def start_game(self):
         self.tetris = tetris.Tetris(self, app)
-        self.tetris.setStyleSheet("background-color: white")
+        tim = datetime.datetime.now()
+        if tim.hour < 6 or tim.hour > 16:
+            self.tetris.setStyleSheet("background-color: black")
+        else:
+            self.tetris.setStyleSheet("background-color: white")
         self.tetris.show()
         self.close()
 

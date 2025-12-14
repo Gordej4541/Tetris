@@ -1,5 +1,6 @@
 import sys
 import random
+import datetime
 from PyQt5.QtWidgets import QMainWindow, QFrame, QLabel, QApplication
 from PyQt5.QtCore import Qt, QBasicTimer
 from PyQt5.QtGui import QPainter, QColor
@@ -203,6 +204,10 @@ class Board(QFrame):
     def drawSquare(self, painter, x, y, shape):
         colorTable = [0x000000, 0xCC6666, 0x66CC66, 0x6666CC,
                       0xCCCC66, 0xCC66CC, 0x66CCCC, 0xDAAA00]
+        tim = datetime.datetime.now()
+        if tim.hour < 6 or tim.hour > 16:
+            colorTable = [0xDAAA00, 0x66CCCC, 0xCC66CC, 0xCCCC66,
+                          0x6666CC, 0x66CC66, 0x66CCCC, 0x000000]
         color = QColor(colorTable[shape])
         painter.fillRect(x + 1, y + 1, self.squareWidth() - 2,
                          self.squareHeight() - 2, color)
@@ -262,7 +267,7 @@ class Board(QFrame):
         self.update()
 
     def game_over(self):
-        self.setWindowTitle("Game Over")
+        self.setWindowTitle("Game Over. Score: " + str(self.score))
 
 
 class Tetrominoe(object):
